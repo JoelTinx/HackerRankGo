@@ -6,8 +6,13 @@ type person struct {
 }
 
 func (p person) NewPerson(initialAge int) person {
-	//Add some more code to run some checks on initialAge
-     
+	if initialAge < 0 {
+		fmt.Println("Age is not valid, setting age to 0.")
+		p.age = 0	
+	} else {
+		p.age = initialAge	
+	}
+    
 	return p
 }
 
